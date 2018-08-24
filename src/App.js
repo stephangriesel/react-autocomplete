@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
-import Projects from './Components/Autocomplete.js';
 import './App.css';
+import Autocomplete from './Components/Autocomplete';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      projects: [
+        {
+          title: 'Test Website',
+          category: 'Test Category'
+        },
+        {
+          title: 'Test Website 2',
+          category: 'Test Category 2'
+        },
+        {
+          title: 'Test Website 3',
+          category: 'Test Category 3'
+        }
+      ]
+    }
+    
+  }
   render() {
     return (
       <div className="App">
-       My Autocomplete App
+       My app
+       <Autocomplete Autocomplete={this.state.projects} />
       </div>
     );
   }
